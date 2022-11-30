@@ -1,19 +1,21 @@
-﻿using MusicPlayer.PlayLists;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MusicPlayer.Designs.Utility;
 
 namespace MusicPlayer.Songs
 {
-    internal class Songs
+    class SongList
     {
-        public void Song()
+
+    }
+
+    internal static class Songs
+    {
+        public static void Song()
         {
-            CreatePlayList.PlaylistCreation();
-            PlayList p = new();
-            Console.WriteLine(p.Name);
+            Console.ForegroundColor = ConsoleColor.Green;            
+            Utility.LongLine();
+            Console.WriteLine("SONGS");
+            Utility.LongLine();
+            Console.ResetColor();
         }
     }
 }

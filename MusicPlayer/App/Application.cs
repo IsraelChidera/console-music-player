@@ -1,4 +1,5 @@
 ﻿using MusicPlayer.Designs.Utility;
+using MusicPlayer.Songs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace MusicPlayer.App
             Utility.WelcomeMessage();
 
             Utility.Action();
+
+            SongList s = new();
+            s.Display();
         }
     }
 }

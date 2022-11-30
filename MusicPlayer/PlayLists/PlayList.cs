@@ -5,10 +5,10 @@ namespace MusicPlayer.PlayLists
     public class PlayList
     {
         private int id;
-        private string name;
+        private string? name;
 
         public int ID { get { return id; } set { id = value; } }
-        public string Name { get { return name; } set { name = value; } }
+        public string? Name { get { return name; } set { name = value; } }
     }
 
     class CreatePlayList
@@ -50,7 +50,7 @@ namespace MusicPlayer.PlayLists
 
         }
 
-        public static void PlaylistCreation()
+        public void PlaylistCreation()
         {
             List<PlayList> playlist = new List<PlayList>()
             {
@@ -59,8 +59,6 @@ namespace MusicPlayer.PlayLists
 
             playlist.Add(new PlayList() { Name = "Default Playlist" });
             playlist.Add(new PlayList() { Name = "Obinna" });
-
-
             
             while (true)
             {

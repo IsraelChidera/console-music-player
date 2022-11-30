@@ -1,4 +1,5 @@
 ﻿using MusicPlayer.PlayLists;
+using MusicPlayer.Songs;
 
 namespace MusicPlayer.Designs.Utility
 {
@@ -13,7 +14,7 @@ namespace MusicPlayer.Designs.Utility
 
         public static void LongLine()
         {
-            Console.WriteLine("**************************************************************************");
+            Console.WriteLine("\n**************************************************************************\n");
         }
 
         public static void Action()
@@ -39,6 +40,7 @@ namespace MusicPlayer.Designs.Utility
                     break;
                 case "2":
                     Console.WriteLine("Opening songs");
+                    Songs.Songs.Song();
                     break;
                 default:
                     Console.WriteLine("Invalid input. Do you mind typing a valid option");
