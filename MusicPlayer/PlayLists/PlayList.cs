@@ -18,10 +18,7 @@ namespace MusicPlayer.PlayLists
             Utility.LongLine();
             Console.WriteLine("\nSorry, you have an empty playlist.\nTo create a playlist ====> Type 1\n" +
                 "To cancel ====> Type 0");
-
-            /*while (true)
-            {*/
-                //int choice = Convert.ToInt32(Console.ReadLine());
+           
                 
                 try
                 {
@@ -49,8 +46,7 @@ namespace MusicPlayer.PlayLists
                     Console.WriteLine(ex.Message);
                 }
 
-
-            //}
+            
 
         }
 
@@ -66,11 +62,7 @@ namespace MusicPlayer.PlayLists
             playlist.Add(new PlayList() { ID = 3, Name = "Obinna" });
 
             
-
-            /*while (string.IsNullOrWhiteSpace(lists.Name))
-            {
-
-            }*/
+            
             while (true)
             {
                 Console.WriteLine("\nAdd new playlist");
@@ -94,8 +86,26 @@ namespace MusicPlayer.PlayLists
                     Console.WriteLine($"-{list.ID} --- {list.Name} ");
                 }
 
+                Utility.LongLine();
+                Console.WriteLine("\nPress 1 to add a new playlist\nPress 0 to return to the main menu");
+                string optionToContinue = Console.ReadLine();
 
-                Console.WriteLine("Press 1 to add a new playlist\nPress 2 to return to the main menu");
+                if(optionToContinue == "1")
+                {
+                    continue;
+                }
+                else if(optionToContinue == "0"){
+                    Utility.Action();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid inputs");                    
+                    Console.WriteLine("\nPress 1 to add a new playlist\nPress 0 to return to the main menu");
+                    optionToContinue = Console.ReadLine();
+                }
+
+
             }
 
             
