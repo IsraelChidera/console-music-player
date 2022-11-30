@@ -65,26 +65,40 @@ namespace MusicPlayer.PlayLists
             playlist.Add(new PlayList() { ID = 2, Name = "Glory" });
             playlist.Add(new PlayList() { ID = 3, Name = "Obinna" });
 
-            Console.WriteLine("\nAdd new playlist");
-            Console.Write("playlist name ====>");
+            
 
-            PlayList lists = new();
-            lists.Name = Console.ReadLine();
+            /*while (string.IsNullOrWhiteSpace(lists.Name))
+            {
 
-            Console.Write("playlist ID ====>");
-            lists.ID = Convert.ToInt32(Console.ReadLine());
+            }*/
+            while (true)
+            {
+                Console.WriteLine("\nAdd new playlist");
+                Console.Write("playlist name ====>");
 
-            playlist.Add(new PlayList() { ID = lists.ID, Name = lists.Name });
+                PlayList lists = new();
+                lists.Name = Console.ReadLine();
 
-            Console.WriteLine("\n");
-            Utility.LongLine();
-            Console.WriteLine("Playlist");
-            Utility.LongLine();
+                Console.Write("playlist ID ====>");
+                lists.ID = Convert.ToInt32(Console.ReadLine());
 
-            foreach (var list in playlist)
-            {               
-                Console.WriteLine($"-{list.ID} --- {list.Name} ");
+                playlist.Add(new PlayList() { ID = lists.ID, Name = lists.Name });
+                Console.WriteLine("Playlist added successfully\n");
+                
+                Utility.LongLine();
+                Console.WriteLine("Playlist");
+                Utility.LongLine();
+
+                foreach (var list in playlist)
+                {
+                    Console.WriteLine($"-{list.ID} --- {list.Name} ");
+                }
+
+
+                Console.WriteLine("Press 1 to add a new playlist\nPress 2 to return to the main menu");
             }
+
+            
 
 
         }
