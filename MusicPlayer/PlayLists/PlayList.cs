@@ -14,7 +14,6 @@ namespace MusicPlayer.PlayLists
             Console.WriteLine("gvh"+Name);
         }
 
-
     }
 
     public class Song
@@ -94,12 +93,8 @@ namespace MusicPlayer.PlayLists
 
             Utility.LongLine();
             Console.WriteLine("Playlist");
-            Utility.LongLine();
+            Utility.LongLine();           
 
-            /*foreach (var list in playlist)
-            {
-                Console.WriteLine($"--- {list.Name} ");
-            }*/
             Start: Console.WriteLine("Press 0 return to main menu");
             string option = Console.ReadLine();
 
@@ -108,33 +103,12 @@ namespace MusicPlayer.PlayLists
                 case "0":
                     CreatePlayList createNew = new();
                     createNew.PlayList();
-                    break;
+                    Console.Clear();                    
+                    goto Start;
                 default:
                     Console.WriteLine("invalid input");
                     goto Start;
-            }
-            
-            //Start: Console.WriteLine("\n\tPress 1 to continue adding a new playlist\n\tPress 2 to add songs to playlist\n\tPress 0 to return to the main menu");
-            /*string optionToContinue = Console.ReadLine();
-            switch (optionToContinue)
-            {
-                case "1":
-                    Console.WriteLine("Adding new playlist");
-                    PlaylistCreation();
-                    break;
-                case "2":
-                    Console.Clear();
-                    Console.WriteLine("Adding songs to playlist");
-                    AddSongs();
-                    break;
-                case "0":
-                    Console.Clear();
-                    Utility.Action();
-                    break;
-                default:
-                    Console.WriteLine("Invalid inputs");
-                    goto Start;
-            }   */                                                    
+            }                                                                          
 
         }
 

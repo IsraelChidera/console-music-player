@@ -50,9 +50,8 @@ namespace MusicPlayer.Songs
                 try
                 {
 
-                    Console.WriteLine("\nMusic section\nWhat do you want to do?");
-                    Console.WriteLine("\tTo play all songs, press 1\n\tTo play previous song, press 2\n\tTo next song" +
-                " press 3\n\tTo shuffle song, press 4\n\tTo add song, press 5\n\tTo exit, press 0\n");
+                    Start: Console.WriteLine("\nMusic section\nWhat do you want to do?");
+                    Console.WriteLine("\tTo play all songs, press 1\n\tTo add song, press 2\n\tTo exit, press 0\n");
                     Console.Write("====>");
                     string musicOption = Console.ReadLine();
                     SongCollection songsList = new();
@@ -67,24 +66,8 @@ namespace MusicPlayer.Songs
                                 Console.WriteLine($"Now playing\n- \t-- \t{song.SongName}");
                                 Thread.Sleep(2000);
                             }
-                            break;
+                            goto Start;                                                                        
                         case "2":
-                            Console.Clear();
-                            Console.WriteLine("Play previous song");
-                            DisplayMusicList();
-                            //int prev = songCollection.First<[index - 1]>;
-                            break;
-                        case "3":
-                            Console.Clear();
-                            Console.WriteLine("Play next song");
-                            DisplayMusicList();
-                            break;
-                        case "4":
-                            Console.Clear();
-                            Console.WriteLine("Shuffle");
-                            DisplayMusicList();
-                            break;
-                        case "5":
                             Console.Clear();
                             Console.WriteLine("Adding songs");
                             Console.WriteLine("\nAdd new song");
@@ -102,7 +85,7 @@ namespace MusicPlayer.Songs
                             }
                             //isTrue = false;
                                                         
-                            break;
+                            goto Start;
                         case "0":
                             Console.Clear();
                             Console.WriteLine("\nExiting song list");
@@ -113,7 +96,7 @@ namespace MusicPlayer.Songs
                             Console.WriteLine("\nPlease provide a valid input\n");
                             Console.ResetColor();
                             DisplayMusicList();
-                            break;
+                            goto Start;
                     }
                 }
                 catch (ArgumentOutOfRangeException e)

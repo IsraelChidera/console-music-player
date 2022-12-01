@@ -37,7 +37,7 @@ namespace MusicPlayer.Designs.Utility
                     break;
                 case "1":
                     Console.Clear();
-                    Console.WriteLine("Playlist is opening");                    
+                    Console.WriteLine("opening playlist");                    
                     createPlayList.PlayList();
                     break;
                 case "2":
