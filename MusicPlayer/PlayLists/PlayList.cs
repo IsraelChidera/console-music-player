@@ -15,7 +15,12 @@ namespace MusicPlayer.PlayLists
     {
         public void PlayList()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Utility.LongLine();
+            Console.WriteLine("PLAYLIST");
+            Utility.LongLine();
+            Console.ResetColor();
+
             Console.WriteLine("\nSorry, you have an empty playlist.\nTo create a playlist ====> Type 1\n" +
                 "To cancel ====> Type 0");
 
