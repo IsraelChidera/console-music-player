@@ -43,16 +43,16 @@ namespace MusicPlayer.Songs
             }
 
             Utility.LongLine();
-            Console.WriteLine("\tTo play all songs, press 1\n\tTo play previous song, press 2\n\tTo next song" +
-                " press 3\n\tTo shuffle song, press 4\n\tTo add song, press 5\n\tTo exit, press 0\n");
 
             bool isTrue = true;
             while (isTrue)
             {
                 try
                 {
-                    
 
+                    Console.WriteLine("\nMusic section\nWhat do you want to do?");
+                    Console.WriteLine("\tTo play all songs, press 1\n\tTo play previous song, press 2\n\tTo next song" +
+                " press 3\n\tTo shuffle song, press 4\n\tTo add song, press 5\n\tTo exit, press 0\n");
                     Console.Write("====>");
                     string musicOption = Console.ReadLine();
                     SongCollection songsList = new();
