@@ -20,15 +20,14 @@ namespace MusicPlayer.Designs.Utility
 
         public static void Action()
         {
-            Console.WriteLine("What do you want to do?\nType 1" +
+            Start:  Console.WriteLine("What do you want to do?\nType 1" +
                 " =====> to view playlist\nType 2 =====> to listen to songs\nType 0 =====> to exit application");
 
 
 
             CreatePlayList createPlayList = new CreatePlayList();
             SongList songList = new SongList();
-            //string choice = Console.ReadLine();
-            //int choice = Convert.ToInt32(Console.ReadLine());
+            
             string choice = Console.ReadLine();
 
             switch (choice)
@@ -48,9 +47,8 @@ namespace MusicPlayer.Designs.Utility
                     SongList.DisplayMusicList();
                     break;
                 default:
-                    Console.WriteLine("Invalid input. Do you mind typing a valid option");
-                    Console.WriteLine("Utility error");
-                    break;
+                    Console.WriteLine("Invalid input. Do you mind typing a valid option\n");                    
+                    goto Start;
             }
 
         }

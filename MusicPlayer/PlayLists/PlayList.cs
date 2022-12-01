@@ -32,14 +32,14 @@ namespace MusicPlayer.PlayLists
             Utility.PlaylistPrompt();
 
             playlist.Add(new PlayList() { Name = "Default Playlist" });
-            playlist.Add(new PlayList() { Name = "Obinna" });
+            playlist.Add(new PlayList() { Name = "Com' on" });
             playlist.Add(new PlayList() { Name = "21 Savage" });
             playlist.Add(new PlayList() { Name = "Jump street" });
 
 
             try
             {
-                string choice = Console.ReadLine();
+                Start: string choice = Console.ReadLine();
 
                 switch (choice)
                 {
@@ -65,8 +65,8 @@ namespace MusicPlayer.PlayLists
                         Utility.Action();
                         break;
                     default:
-                        Console.WriteLine("Invalid option. Do you mind inserting a valid option");                        
-                        break;
+                        Console.WriteLine("Invalid option. Do you mind inserting a valid option");
+                        goto Start;
                 }
             }
             catch (FormatException ex)
@@ -145,8 +145,7 @@ namespace MusicPlayer.PlayLists
             songAdded.Add(new Song() { Name = "Boom sounds" });
 
             while (true)
-            {
-                Console.WriteLine("Adding songs to playlist 2");
+            {                
                 Console.WriteLine("\nWhich playlist will you like to add songs to");
 
                 string playlistSearch = Console.ReadLine();
@@ -166,13 +165,21 @@ namespace MusicPlayer.PlayLists
                         string song = Console.ReadLine();
 
                         songAdded.Add(new Song() { Name = song });
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"You have successfully added a song to {i.Name} playlist\n");
+                        Console.ResetColor();
+
+                        Utility.LongLine();
+                        Console.WriteLine($"Songs in {i.Name} playlist");
+                        Console.WriteLine($"\t{songAdded}");
                         break;
                     }
 
                     else
                     {
-                        Console.WriteLine("invalid inputs");
-                        continue;
+                        Console.WriteLine("invalid inputs");                        
+                        //break;
                     }
                 }
             }
