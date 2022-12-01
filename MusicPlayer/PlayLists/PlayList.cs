@@ -17,9 +17,18 @@ namespace MusicPlayer.PlayLists
 
     class CreatePlayList
     {
+        List<PlayList> playlist = new List<PlayList>();
+
+
         public void PlayList()
         {
             Utility.PlaylistPrompt();
+
+            playlist.Add(new PlayList() { Name = "Default Playlist" });
+            playlist.Add(new PlayList() { Name = "Obinna" });
+            playlist.Add(new PlayList() { Name = "21 Savage" });
+            playlist.Add(new PlayList() { Name = "Jump street" });
+
 
             try
             {
@@ -32,15 +41,24 @@ namespace MusicPlayer.PlayLists
                         Console.WriteLine("Creating a playlist");
                         PlaylistCreation();
                         break;
+                    case "2":
+                        Console.Clear();
+                        Console.WriteLine("Welcome... Here are your playlists");
+                        foreach(var lists in playlist)
+                        {
+                            Console.WriteLine($"\n\t{lists.Name}");
+                        }
+                        Console.WriteLine("");
+                        CreatePlayList create = new();
+                        create.PlayList();
+                        break;
                     case "0":
                         Console.Clear();
                         Console.WriteLine("Exiting Playlist");
                         Utility.Action();
                         break;
                     default:
-                        Console.WriteLine("Invalid option. Do you mind inserting a valid option");
-                        Console.WriteLine("\nSorry, you have an empty playlist.\nTo create a playlist ====> Type 1\n" +
-                        "To cancel ====> Type 0");
+                        Console.WriteLine("Invalid option. Do you mind inserting a valid option");                        
                         break;
                 }
             }
@@ -54,7 +72,7 @@ namespace MusicPlayer.PlayLists
 
         public void PlaylistCreation()
         {
-            List<PlayList> playlist = new List<PlayList>();
+            
             //{
               //  new PlayList() { Name = "israel" }
             //};
@@ -107,11 +125,8 @@ namespace MusicPlayer.PlayLists
                 else
                 {
                     Console.WriteLine("Invalid inputs");
-                    Console.WriteLine("\n\tPress 1 to add a new playlist\n\tPress 2 to add songs to playlist\n\tPress 0 to return to the main menu");
-                    optionToContinue = Console.ReadLine();
+                   
                 }
-
-                
 
 
             }

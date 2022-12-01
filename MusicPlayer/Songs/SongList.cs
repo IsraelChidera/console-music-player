@@ -104,6 +104,7 @@ namespace MusicPlayer.Songs
                                                         
                             break;
                         case "0":
+                            Console.Clear();
                             Console.WriteLine("\nExiting song list");
                             Utility.Action();
                             break;

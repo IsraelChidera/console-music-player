@@ -63,7 +63,7 @@ namespace MusicPlayer.Designs.Utility
             Utility.LongLine();
             Console.ResetColor();
 
-            Console.WriteLine("\nSorry, you have an empty playlist.\nTo create a playlist ====> Type 1\n" +
+            Console.WriteLine("\nTo create a playlist ====> Type 1\nTo view playlists ====> Type 2\n" +
                 "To cancel ====> Type 0");
         }
     }
