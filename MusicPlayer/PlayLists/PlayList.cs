@@ -124,7 +124,8 @@ namespace MusicPlayer.PlayLists
         public static void AddSongs()
         {
             Console.WriteLine("Adding songs to playlist 2");
-            Console.WriteLine("");
+            Console.WriteLine("\nWhere do you want to add ");
+
         }
     }
 }
