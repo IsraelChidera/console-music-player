@@ -7,9 +7,10 @@ namespace MusicPlayer.Designs.Utility
     {
         public static void WelcomeMessage()
         {
-            Console.WriteLine("Boom Music Player");
-            Console.WriteLine("Where music lives....");
-            Console.WriteLine("*******************************\n");
+            Console.WriteLine("Boom Music Player\nWhere music lives....\n*******************************\n" +
+                "Hello there . . . Good day!");
+            Console.WriteLine("");
+            Console.WriteLine("");
         }
 
         public static void LongLine()
@@ -19,7 +20,7 @@ namespace MusicPlayer.Designs.Utility
 
         public static void Action()
         {
-            Console.WriteLine("Hello there . . . Good day!\nWhat do you want to do?\nType 1" +
+            Console.WriteLine("What do you want to do?\nType 1" +
                 " =====> to view playlist\nType 2 =====> to listen to songs\nType 0 =====> to exit application");
 
 
@@ -42,17 +43,13 @@ namespace MusicPlayer.Designs.Utility
                 case "2":
                     Console.WriteLine("Opening songs");
                     Songs.Songs.Song();
-                    songList.DisplayMusicList();
+                    SongList.DisplayMusicList();
                     break;
                 default:
                     Console.WriteLine("Invalid input. Do you mind typing a valid option");
                     Console.WriteLine("Utility error");
                     break;
             }
-
-
-
-
 
         }
 
