@@ -3,11 +3,8 @@
 namespace MusicPlayer.Songs
 {
     class SongCollection
-    {
-        private string? artist;
-        private string? songName;
-
-        public string? Artist { get { return artist; } set { artist = value; } }
+    {        
+        private string? songName;        
         public string? SongName { get { return songName; } set { songName = value; } }
     }
 
@@ -26,24 +23,24 @@ namespace MusicPlayer.Songs
         {
             List<SongCollection> songCollection = new List<SongCollection>()
             {
-                new SongCollection() { Artist = "israel", SongName="my compliments"}
+                new SongCollection() { SongName="my compliments"}
             };
-            songCollection.Add(new SongCollection() { Artist = "meq", SongName = "for reals" });
-            songCollection.Add(new SongCollection() { Artist = "Tut", SongName = "Amazed" });
-            songCollection.Add(new SongCollection() { Artist = "Fruyi", SongName = "Friends" });
-            songCollection.Add(new SongCollection() { Artist = "Tonali", SongName = "Grand dad's love" });
-            songCollection.Add(new SongCollection() { Artist = "Folu", SongName = "Go get 'em" });
+            songCollection.Add(new SongCollection() { SongName = "for reals" });
+            songCollection.Add(new SongCollection() { SongName = "Amazed" });
+            songCollection.Add(new SongCollection() {  SongName = "Friends" });
+            songCollection.Add(new SongCollection() {  SongName = "Grand dad's love" });
+            songCollection.Add(new SongCollection() {  SongName = "Go get 'em" });
             //songCollection.Sort();
 
-            Console.WriteLine("All songs\n- \tArtist -- \tSong Title");
+            Console.WriteLine("All songs\n- \t -- \tSong Title");
 
             var results = songCollection
-                      .OrderByDescending(y => y.Artist);
-                      
+                      .OrderByDescending(y => y.SongName);
 
-            foreach (var song in results)
+
+            foreach (var song in songCollection)
             {
-                Console.WriteLine($"- \t{song.Artist} -- \t{song.SongName}");
+                Console.WriteLine($"- \t -- \t{song.SongName}");
             }
 
             while (true)
@@ -63,7 +60,7 @@ namespace MusicPlayer.Songs
                     {
                         case "1":
                             Console.WriteLine("Playing all songs");
-                            foreach (var song in results)
+                            foreach (var song in songCollection)
                             {
                                 Console.WriteLine($"Now playing\n- \t-- \t{song.SongName}");
                                 Thread.Sleep(2000);
@@ -71,6 +68,7 @@ namespace MusicPlayer.Songs
                             break;                        
                         case "2":
                             Console.WriteLine("Play previous song");
+                            Console.WriteLine(songCollection);
                             break;
                         case "3":
                             Console.WriteLine("Play next song");
@@ -82,8 +80,13 @@ namespace MusicPlayer.Songs
                             Console.WriteLine("Adding songs");
                             break;
                         default:
-                            throw new ArgumentOutOfRangeException("Invalid input");
+                            Console.WriteLine("Please provide a valid input");
+                            break;
                     }
+                }
+                catch(ArgumentOutOfRangeException e)
+                {
+                    Console.WriteLine("Invalid input");
                 }
                 catch(FormatException ex)
                 {
