@@ -1,4 +1,5 @@
 ﻿using MusicPlayer.Designs.Utility;
+using MusicPlayer.Songs;
 
 namespace MusicPlayer.PlayLists
 {
@@ -94,6 +95,8 @@ namespace MusicPlayer.PlayLists
                 {
                     Console.Clear();
                     Console.WriteLine("Adding songs to playlist");
+                    AddSongs();
+                    break;
                 }
                 else if (optionToContinue == "0" && !String.IsNullOrEmpty(optionToContinue))
                 {
@@ -116,6 +119,12 @@ namespace MusicPlayer.PlayLists
 
 
 
+        }
+
+        public static void AddSongs()
+        {
+            Console.WriteLine("Adding songs to playlist 2");
+            Console.WriteLine("");
         }
     }
 }

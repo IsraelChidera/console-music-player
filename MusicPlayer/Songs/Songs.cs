@@ -18,19 +18,6 @@ namespace MusicPlayer.Songs
     class SongsPlayList
     {
 
-        public void Display()
-        {
-            PlayList playList = new PlayList();
-
-            Console.WriteLine("refactoring ...");
-            Console.WriteLine("ff");
-            playList.GetData();
-            List<PlayList> playlist = new List<PlayList>();
-            foreach (var i in playlist)
-            {
-                Console.WriteLine("Ds");
-                
-            }
-        }
+        
     }
 }
