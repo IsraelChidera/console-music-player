@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace MusicPlayer.Songs
+﻿namespace MusicPlayer.Songs
 {
     class SongCollection
     {
@@ -15,21 +13,29 @@ namespace MusicPlayer.Songs
     {
         //List<SongCollection> songCollection = List<SongCollection>(){};
 
-        List<SongCollection> songCollection = new List<SongCollection>()
-        {
-                new SongCollection() { Artist = "israel", SongName="my compliments"}
-        };
+
 
         public void AddToMusicList()
         {
-            songCollection.Add(new SongCollection() { Artist = "meq", SongName = "for reals" });            
+
         }
 
         public void DisplayMusicList()
         {
-            Console.WriteLine("- \tArtist -- \tSong Title");
-            Console.WriteLine("**********************************************************");
-            foreach(var song in songCollection)
+            List<SongCollection> songCollection = new List<SongCollection>()
+            {
+                new SongCollection() { Artist = "israel", SongName="my compliments"}
+            };
+            songCollection.Add(new SongCollection() { Artist = "meq", SongName = "for reals" });
+            songCollection.Add(new SongCollection() { Artist = "Tut", SongName = "Amazed" });
+            songCollection.Add(new SongCollection() { Artist = "Fruyi", SongName = "Friends" });
+            songCollection.Add(new SongCollection() { Artist = "Tonali", SongName = "Grand dad's love" });
+            songCollection.Add(new SongCollection() { Artist = "Folu", SongName = "Go get 'em" });
+
+
+            Console.WriteLine("All songs\n- \tArtist -- \tSong Title");
+
+            foreach (var song in songCollection)
             {
                 Console.WriteLine($"- \t{song.Artist} -- \t{song.SongName}");
             }
@@ -37,7 +43,7 @@ namespace MusicPlayer.Songs
 
         }
 
-        
+
     }
 
 
