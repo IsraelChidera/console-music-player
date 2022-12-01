@@ -25,7 +25,7 @@ namespace MusicPlayer.PlayLists
     class CreatePlayList
     {
         List<PlayList> playlist = new List<PlayList>();
-
+        List<Song> songAdded = new List<Song>();
 
         public void PlayList()
         {
@@ -142,30 +142,42 @@ namespace MusicPlayer.PlayLists
 
         public void AddSongs()
         {
-            Console.WriteLine("Adding songs to playlist 2");
-            Console.WriteLine("\nWhich playlist will you like to add songs");
+            songAdded.Add(new Song() { Name = "Boom sounds" });
 
-            string songs = Console.ReadLine();
-
-            /*for (int i = 0; i < playlist.Count; i++)
+            while (true)
             {
-                if (playlist[i].Name.Equals(songs))
-                {
-                    Console.WriteLine($"Found. You are in {playlist[i]} playlist");
-                }
-            }*/
+                Console.WriteLine("Adding songs to playlist 2");
+                Console.WriteLine("\nWhich playlist will you like to add songs to");
 
-            foreach(var i in playlist)
-            {
-                if (i.Name.Equals(songs))
+                string playlistSearch = Console.ReadLine();
+
+                foreach (var i in playlist)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Utility.LongLine();
-                    Console.ResetColor();
-                    
-                    Console.WriteLine($"You are in {i.Name} playlists");
+                    if (i.Name.Equals(playlistSearch))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Utility.LongLine();
+                        Console.ResetColor();
+
+                        Console.WriteLine($"\n\tYou are in {i.Name} playlists");
+                        Console.WriteLine($"Add song to {i.Name} playlist");
+                        Console.Write("=>");
+
+                        string song = Console.ReadLine();
+
+                        songAdded.Add(new Song() { Name = song });
+                        break;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("invalid inputs");
+                        continue;
+                    }
                 }
             }
+            
+
         }
     }
 }
