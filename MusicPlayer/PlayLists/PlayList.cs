@@ -66,10 +66,7 @@ namespace MusicPlayer.PlayLists
                 Console.Write("playlist name ====>");
 
                 PlayList lists = new();
-                lists.Name = Console.ReadLine();
-
-                /*Console.Write("playlist ID ====>");
-                lists.ID = Convert.ToInt32(Console.ReadLine());*/
+                lists.Name = Console.ReadLine();                
 
                 playlist.Add(new PlayList() { Name = lists.Name });
                 Console.WriteLine("Playlist added successfully\n");

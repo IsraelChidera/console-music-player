@@ -1,4 +1,5 @@
 ﻿using MusicPlayer.Designs.Utility;
+using MusicPlayer.PlayLists;
 
 namespace MusicPlayer.Songs
 {
@@ -14,9 +15,9 @@ namespace MusicPlayer.Songs
 
 
 
-        public void AddToMusicList()
+        public void ShuffleList()            
         {
-
+            var random = new Random();
         }
 
         public void DisplayMusicList()
@@ -50,9 +51,7 @@ namespace MusicPlayer.Songs
                     " press 3\n\tTo shuffle song, press 4\n\tTo add song, press 5\n\tTo exit, press 0\n");
                 
                 Console.Write("====>");
-                string musicOption = Console.ReadLine();
-
-                Console.WriteLine(musicOption);
+                string musicOption = Console.ReadLine();                
 
                 try
                 {
@@ -69,6 +68,8 @@ namespace MusicPlayer.Songs
                         case "2":
                             Console.WriteLine("Play previous song");
                             Console.WriteLine(songCollection);
+                            int index = 1;
+                            //int prev = songCollection.First<[index - 1]>;
                             break;
                         case "3":
                             Console.WriteLine("Play next song");
@@ -78,6 +79,12 @@ namespace MusicPlayer.Songs
                             break;
                         case "5":
                             Console.WriteLine("Adding songs");
+                            Console.WriteLine("\nAdd new song");
+                            Console.Write("song ====>");
+                            SongCollection songsList = new();
+                            songsList.SongName = Console.ReadLine();
+                            songCollection.Add(new SongCollection() { SongName = songsList.SongName });
+                            Console.WriteLine("You've added a song...\n");
                             break;
                         default:
                             Console.WriteLine("Please provide a valid input");
