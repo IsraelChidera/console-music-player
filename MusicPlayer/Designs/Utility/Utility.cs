@@ -25,6 +25,7 @@ namespace MusicPlayer.Designs.Utility
 
 
             CreatePlayList createPlayList = new CreatePlayList();
+            SongList songList = new SongList();
             //string choice = Console.ReadLine();
             //int choice = Convert.ToInt32(Console.ReadLine());
             string choice = Console.ReadLine();
@@ -41,6 +42,7 @@ namespace MusicPlayer.Designs.Utility
                 case "2":
                     Console.WriteLine("Opening songs");
                     Songs.Songs.Song();
+                    songList.DisplayMusicList();
                     break;
                 default:
                     Console.WriteLine("Invalid input. Do you mind typing a valid option");

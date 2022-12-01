@@ -16,8 +16,8 @@ namespace MusicPlayer.App
 
             Utility.Action();
 
-            SongList s = new();
-            s.Display();
+            
+            
         }
     }
 }

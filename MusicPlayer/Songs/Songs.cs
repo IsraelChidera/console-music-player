@@ -2,10 +2,7 @@
 
 namespace MusicPlayer.Songs
 {
-    class SongList
-    {
-
-    }
+    
 
     internal static class Songs
     {

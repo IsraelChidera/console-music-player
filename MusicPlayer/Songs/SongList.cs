@@ -1,22 +1,44 @@
-﻿using MusicPlayer.PlayLists;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Xml.Linq;
 
 namespace MusicPlayer.Songs
 {
-    internal class SongList
+    class SongCollection
     {
-        CreatePlayList e = new();
-        public void Display()
-        {
-            /*Console.WriteLine("displaying in songist");
-            List<PlayList> aplaylist = e.PlaylistCreation();
+        private string? artist;
+        private string? songName;
 
-
-            var lst = e.lis*/
-        }
+        public string? Artist { get { return artist; } set { artist = value; } }
+        public string? SongName { get { return songName; } set { songName = value; } }
     }
+
+    public class SongList
+    {
+        //List<SongCollection> songCollection = List<SongCollection>(){};
+
+        List<SongCollection> songCollection = new List<SongCollection>()
+        {
+                new SongCollection() { Artist = "israel", SongName="my compliments"}
+        };
+
+        public void AddToMusicList()
+        {
+            songCollection.Add(new SongCollection() { Artist = "meq", SongName = "for reals" });            
+        }
+
+        public void DisplayMusicList()
+        {
+            Console.WriteLine("- \tArtist -- \tSong Title");
+            Console.WriteLine("**********************************************************");
+            foreach(var song in songCollection)
+            {
+                Console.WriteLine($"- \t{song.Artist} -- \t{song.SongName}");
+            }
+
+
+        }
+
+        
+    }
+
+
 }
