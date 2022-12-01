@@ -48,16 +48,15 @@ namespace MusicPlayer.PlayLists
                 Console.WriteLine(ex.Message);
             }
 
-
-
         }
+
 
         public void PlaylistCreation()
         {
-            List<PlayList> playlist = new List<PlayList>()
-            {
-                new PlayList() { Name = "israel" }
-            };
+            List<PlayList> playlist = new List<PlayList>();
+            //{
+              //  new PlayList() { Name = "israel" }
+            //};
 
             playlist.Add(new PlayList() { Name = "Default Playlist" });
             playlist.Add(new PlayList() { Name = "Obinna" });
