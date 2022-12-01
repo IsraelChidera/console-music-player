@@ -3,16 +3,14 @@
 namespace MusicPlayer.PlayLists
 {
     public class PlayList
-    {
-        private int id;
+    {        
         private string? name;
-
-        public int ID { get { return id; } set { id = value; } }
+        
         public string? Name { get { return name; } set { name = value; } }
 
-        public string getData()
+        public void GetData()
         {
-            return ID + " " + Name;
+            Console.WriteLine("gvh"+Name);
         }
     }
 
@@ -29,10 +27,12 @@ namespace MusicPlayer.PlayLists
                 switch (choice)
                 {
                     case "1":
+                        Console.Clear();
                         Console.WriteLine("Creating a playlist");
                         PlaylistCreation();
                         break;
                     case "0":
+                        Console.Clear();
                         Console.WriteLine("Exiting Playlist");
                         Utility.Action();
                         break;
@@ -59,7 +59,7 @@ namespace MusicPlayer.PlayLists
             //};
 
             playlist.Add(new PlayList() { Name = "Default Playlist" });
-            playlist.Add(new PlayList() { Name = "Obinna" });
+            playlist.Add(new PlayList() { Name = "Obinna" });            
             
             while (true)
             {
@@ -82,24 +82,33 @@ namespace MusicPlayer.PlayLists
                 }
 
                 Utility.LongLine();
-                Console.WriteLine("\nPress 1 to add a new playlist\nPress 0 to return to the main menu");
+                Console.WriteLine("\n\tPress 1 to add a new playlist\n\tPress 2 to add songs to playlist\n\tPress 0 to return to the main menu");
                 string optionToContinue = Console.ReadLine();
 
-                if (optionToContinue == "1")
+                if (optionToContinue == "1" && !String.IsNullOrEmpty(optionToContinue))
                 {
+                    Console.Clear();
                     continue;
                 }
-                else if (optionToContinue == "0")
+                else if(optionToContinue == "2" && !String.IsNullOrEmpty(optionToContinue))
                 {
+                    Console.Clear();
+                    Console.WriteLine("Adding songs to playlist");
+                }
+                else if (optionToContinue == "0" && !String.IsNullOrEmpty(optionToContinue))
+                {
+                    Console.Clear();
                     Utility.Action();
                     break;
                 }
                 else
                 {
                     Console.WriteLine("Invalid inputs");
-                    Console.WriteLine("\nPress 1 to add a new playlist\nPress 0 to return to the main menu");
+                    Console.WriteLine("\n\tPress 1 to add a new playlist\n\tPress 2 to add songs to playlist\n\tPress 0 to return to the main menu");
                     optionToContinue = Console.ReadLine();
                 }
+
+                
 
 
             }

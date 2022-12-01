@@ -58,6 +58,7 @@ namespace MusicPlayer.Songs
                 switch (musicOption)
                 {
                     case "1":
+                        Console.Clear();
                         Console.WriteLine("Playing all songs");
                         foreach (var song in songCollection)
                         {
@@ -66,12 +67,14 @@ namespace MusicPlayer.Songs
                         }
                         break;
                     case "2":
+                        Console.Clear();
                         Console.WriteLine("Play previous song");
                         Console.WriteLine(songCollection);
                         int index = 1;
                         //int prev = songCollection.First<[index - 1]>;
                         break;
                     case "3":
+                        Console.Clear();
                         Console.WriteLine("Play next song");
                         break;
                     case "4":

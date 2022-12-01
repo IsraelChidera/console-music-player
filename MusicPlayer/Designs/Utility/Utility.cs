@@ -37,10 +37,12 @@ namespace MusicPlayer.Designs.Utility
                     Console.WriteLine("Ouch!... We hope to see you again");
                     break;
                 case "1":
+                    Console.Clear();
                     Console.WriteLine("Playlist is opening");                    
                     createPlayList.PlayList();
                     break;
                 case "2":
+                    Console.Clear();
                     Console.WriteLine("Opening songs");
                     Songs.Songs.Song();
                     SongList.DisplayMusicList();
