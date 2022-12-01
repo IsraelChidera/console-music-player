@@ -15,6 +15,13 @@ namespace MusicPlayer.PlayLists
         }
     }
 
+    public class Song
+    {
+        private string? name;
+
+        public string? Name { get { return name; } set { name = value; } }
+    }
+
     class CreatePlayList
     {
         List<PlayList> playlist = new List<PlayList>();
@@ -131,16 +138,34 @@ namespace MusicPlayer.PlayLists
 
             }
 
-
-
-
         }
 
-        public static void AddSongs()
+        public void AddSongs()
         {
             Console.WriteLine("Adding songs to playlist 2");
-            Console.WriteLine("\nWhere do you want to add ");
+            Console.WriteLine("\nWhich playlist will you like to add songs");
 
+            string songs = Console.ReadLine();
+
+            /*for (int i = 0; i < playlist.Count; i++)
+            {
+                if (playlist[i].Name.Equals(songs))
+                {
+                    Console.WriteLine($"Found. You are in {playlist[i]} playlist");
+                }
+            }*/
+
+            foreach(var i in playlist)
+            {
+                if (i.Name.Equals(songs))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Utility.LongLine();
+                    Console.ResetColor();
+                    
+                    Console.WriteLine($"You are in {i.Name} playlists");
+                }
+            }
         }
     }
 }
