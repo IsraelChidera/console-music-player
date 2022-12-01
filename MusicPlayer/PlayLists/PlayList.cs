@@ -9,21 +9,18 @@ namespace MusicPlayer.PlayLists
 
         public int ID { get { return id; } set { id = value; } }
         public string? Name { get { return name; } set { name = value; } }
+
+        public string getData()
+        {
+            return ID + " " + Name;
+        }
     }
 
     class CreatePlayList
     {
         public void PlayList()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Utility.LongLine();
-            Console.WriteLine("PLAYLIST");
-            Utility.LongLine();
-            Console.ResetColor();
-
-            Console.WriteLine("\nSorry, you have an empty playlist.\nTo create a playlist ====> Type 1\n" +
-                "To cancel ====> Type 0");
-
+            Utility.PlaylistPrompt();
 
             try
             {
